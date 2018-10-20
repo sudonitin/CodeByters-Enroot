@@ -13,8 +13,6 @@ for match in matches:
 print(words)
 
 sw=stopwords.words('english')
-cleanWords=[]
-
 i=0
 l=len(words)
 count=0
@@ -29,7 +27,16 @@ while i<len(words):
             break
         j=j+1
     i=i+1    
-print(words)
+cleanWords=words
+
+wordSynonyms=[]
+for matchedWords in cleanWords:
+    for syn in wordnet.synsets(matchedWords):
+        for lemma in syn.lemmas():
+            wordSynonyms.append(lemma.name())
+
+
+
 """
 maxwordlen=len(words)
 maxswlen=len(sw)
