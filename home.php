@@ -91,7 +91,7 @@
 		
 	<!--particle ends here-->
 
-	<div class="container-fluid" style="z-index: +1;" id="fluid_1">
+	<div class="container-fluid" style="z-index: +1; margin-top: 5%;" id="fluid_1">
 		<h1>Fake News Catcher.com</h1><br>
 			<main style="position: absolute; text-align: center;" id="search-box">
 				<input type="text" class="search" style= "z-index: +1"/>
@@ -170,7 +170,7 @@
 	#search-box{
 		position: absolute;
 		left: 50%;
-		top: 14%;
+		top: 18%;
 		transform: translate(-50%, -50%);
 	}
 
@@ -178,7 +178,7 @@
 		#search-box{
 		position: absolute;
 		left: 50%;
-		top: 34%;
+		top: 37%;
 		transform: translate(-50%, -50%);
 		}
 
@@ -213,8 +213,5 @@
 	}
 		</style>
 	</div>
-
-	
-
 </body>
 </html>
