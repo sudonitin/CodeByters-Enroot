@@ -12,7 +12,7 @@ print(s.group()) #search stops after matching
 
 
 #use this instead of word_tokenise
-matches=re.findall(r'[a-zA-Z0-9\']+', "Mr. Hello world! Where are you? I am fine. Good night. Today's Headlines are")
+matches=re.findall(r'[a-zA-Z0-9]+', "Mr. Hello world! Where are you? I am fine. Good night. Today's Headlines are")
 for match in matches:
     print(match.lower())
 

@@ -46,11 +46,14 @@ for match in matches:
     print(match.lower())
     words.append(match.lower())
 
-#this is to collect sysnonyms
+#this is to collect synonyms
+
 wordSynonyms=[]
-for syn in wordnet.synsets('Computer'):
-    for lemma in syn.lemmas():
-        wordSynonyms.append(lemma.name())
+for matchedWords in words:
+    for syn in wordnet.synsets(matchedWords):
+        for lemma in syn.lemmas():
+            wordSynonyms.append(lemma.name())
+
 print(wordSynonyms)        
 
 
