@@ -42,27 +42,9 @@
 
 </head>
 <body>
-	<div class="container-fluid" id="myparticlejs" style="z-index: -1;">
-		
 
-
-	</div>
-
-	<div class="container-fluid" id="fluid_1" style="color: black; z-index: 1000;">
-		<h1>Fake News Catcher.com</h1><br>
-		<div id="particles-js">
-			<main style="position: absolute; text-align: center;" id="search-box">
-				<input type="text" class="search" style= "z-index: +1" row=5/>
-				<div class="line-1"></div>
-				<div class="line-2"></div><br>
-			</main>
-		</div>
-		<div>
-			<input type="button" name="" value="check" />
-		</div>
-
-		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-		<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+		<div id="particles-js" style="z-index: -1;" ></div>
+		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 		<style type="text/css">
 		
@@ -100,8 +82,26 @@
 		border-radius: 0 0 3px 3px; 
 	}
 
+		</style>
 
-	/*search-animation*/
+		<script type="text/javascript">
+			particlesJS("particles-js", {"particles":{"number":{"value":265,"density":{"enable":true,"value_area":2004.2650760819035}},"color":{"value":"#000000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":9.176472499005207,"opacity_min":0.0974492654761615,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#02fc1e","opacity":0.9620472365193137,"width":2},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+		</script>
+
+		
+	<!--particle ends here-->
+
+	<div class="container-fluid" style="z-index: +1;" id="fluid_1">
+		<h1>Fake News Catcher.com</h1><br>
+			<main style="position: absolute; text-align: center;" id="search-box">
+				<input type="text" class="search" style= "z-index: +1"/>
+				<div class="line-1"></div>
+				<div class="line-2"></div><br>
+			</main><br><br><br><br><br>
+			<a href="#" id="stylish-btn">Check</a>
+
+		<style type="text/css">
+			/*search-animation*/
 	@import url('https://fonts.googleapis.com/css?family=Roboto:500');
 
 		::selection {
@@ -142,8 +142,8 @@
 	    color: black;
 	    font-family: 'Roboto', sans-serif;
 	    font-size: 110%;
-	    width: 6em;
-	    height: 6em;
+	    width: 5em;
+	    height: 5em;
 	    line-height: 6em;
 	    border: 0.313em solid black;
 	    border-radius: 6.250em;
@@ -178,7 +178,7 @@
 		#search-box{
 		position: absolute;
 		left: 50%;
-		top: 15%;
+		top: 34%;
 		transform: translate(-50%, -50%);
 		}
 
@@ -207,15 +207,14 @@
 	    height: 4em;
 	    border: 0.313em solid black;
 	    border-radius: 1.250em;
+	    margin-top: 6%;
 	}
 
 	}
 		</style>
-
-		<script type="text/javascript">
-			particlesJS("particles-js", {"particles":{"number":{"value":265,"density":{"enable":true,"value_area":2004.2650760819035}},"color":{"value":"#000000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":9.176472499005207,"opacity_min":0.0974492654761615,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#02fc1e","opacity":0.9620472365193137,"width":2},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
-		</script>
-
 	</div>
+
+	
+
 </body>
 </html>
