@@ -7,6 +7,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <script type="text/javascript" src="js/search.js"></script>
 
@@ -24,6 +25,9 @@
 						'height':'40px',
 						'opacity':'1'
 				});
+				$('.icon').css({
+						'margin-top': '10%'
+				});
 		});
 		$('.line-1, .line-2').click(function() {
 				$('.search').removeClass('active').val('');
@@ -35,15 +39,14 @@
 						'height':'0px',
 						'opacity':'0'
 				});
+				$('.icon').css({
+						'margin-top': '8%'
+				});
 
 		});
 });
 </script>
-
-</head>
-<body>
-
-		<div id="particles-js" style="z-index: -1;" ></div>
+<div id="particles-js" style="z-index: -1;" ></div>
 		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 		<style type="text/css">
@@ -90,14 +93,19 @@
 
 		
 	<!--particle ends here-->
+</head>
 
-	<div class="container-fluid" style="z-index: +1; margin-top: 5%;" id="fluid_1">
+<body>
+
+	<div class="container-fluid" style="z-index: +1; background-color: transparent;" id="fluid_1">
 		<h1>Fake News Catcher.com</h1><br>
 			<main style="position: absolute; text-align: center;" id="search-box">
-				<input type="text" class="search" style= "z-index: +1"/>
+				<input type="text" class="search" style= "z-index: +1"/> 
 				<div class="line-1"></div>
 				<div class="line-2"></div><br>
-			</main><br><br><br><br><br>
+				
+			</main><br><br>
+			<i style="z-index: +1; margin-top: 8%;" class="fas fa-camera fa-3x icon"></i><br><br>
 			<a href="#" id="stylish-btn">Check</a>
 
 		<style type="text/css">
