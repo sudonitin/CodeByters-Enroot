@@ -25,8 +25,9 @@
 						'height':'40px',
 						'opacity':'1'
 				});
-				$('.icon').css({
-						'margin-top': '10%'
+				$('.ic').css({
+						'margin-top': '10%',
+						'z-index': '+1'
 				});
 		});
 		$('.line-1, .line-2').click(function() {
@@ -39,8 +40,9 @@
 						'height':'0px',
 						'opacity':'0'
 				});
-				$('.icon').css({
-						'margin-top': '8%'
+				$('.ic').css({
+						'margin-top': '8%',
+						'z-index': '+1'
 				});
 
 		});
@@ -102,11 +104,47 @@
 			<main style="position: absolute; text-align: center;" id="search-box">
 				<input type="text" class="search" style= "z-index: +1"/> 
 				<div class="line-1"></div>
-				<div class="line-2"></div><br>
+				<div class="line-2"></div>
 				
-			</main><br><br>
-			<i style="z-index: +1; margin-top: 8%;" class="fas fa-camera fa-3x icon"></i><br><br>
-			<a href="#" id="stylish-btn">Check</a>
+			</main><br>
+
+			<div class="container">  <!-- Button to Open the Modal -->
+				  <button type="button" style="margin-top: 10%; background-color: transparent;" class="btn" data-toggle="modal" data-target="#myModal"><i class="fas fa-camera fa-3x"></i>
+				  </button>
+
+				  <!-- The Modal -->
+				  <div class="modal" id="myModal">
+				    <div class="modal-dialog">
+				      <div class="modal-content">
+				      
+				        <!-- Modal Header -->
+				        <div class="modal-header">
+				          <h4 class="modal-title">Upload Image</h4>
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        </div>
+				        
+				        <!-- Modal body -->
+				        <div class="modal-body">
+				          <form>
+				          	<input type="file" name=""> 
+				          </form>
+				        </div>
+				        
+				        <!-- Modal footer -->
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				          <button type="button" class="btn btn-warning" data-dismiss="modal">upload</button>
+				        </div>
+				        
+				      </div>
+				    </div>
+				  </div>
+  
+				</div>
+
+			<a href="#" id="stylish-btn">Check</a><br>
+			
+			
 
 		<style type="text/css">
 			/*search-animation*/
@@ -186,7 +224,7 @@
 		#search-box{
 		position: absolute;
 		left: 50%;
-		top: 37%;
+		top: 30%;
 		transform: translate(-50%, -50%);
 		}
 

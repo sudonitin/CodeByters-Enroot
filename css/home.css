@@ -71,9 +71,12 @@ body{
 }
 /*button animation finished above*/
 
+i{
+	color: black;
+}
 
-footer{
-	padding-top: 3%;
+i:hover{
+	color: #929993;
 }
 
 @media only screen and (min-width: 1024px){
@@ -93,7 +96,7 @@ footer{
 		/*button animation*/
 	#stylish-btn{
 		position: absolute;
-		margin-top: 4%;
+		margin-top: 3%;
 		top: 53%;
 		left: 50%;
 		transform: translate(-50%,-50%);
@@ -143,4 +146,5 @@ footer{
 		transform-origin: bottom right;
 		transform: scale(0);
 	}
+
 }
