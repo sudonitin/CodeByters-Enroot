@@ -90,5 +90,7 @@ def runApp(channel):
     return finalresult
     #print(finalresult)
 
+def printtest(somevalue):
+    print('value printed is',somevalue)
 
     
