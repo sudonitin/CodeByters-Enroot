@@ -3,6 +3,8 @@ import re
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import wordnet, stopwords
 
+
+
 class Generator:
     def __init__(self, para):
         self.para=para
@@ -46,27 +48,47 @@ class Generator:
 
         return wordSynonyms2
 
-para1="At least 60 people celebrating Dussehra were killed after a train ran over hundreds standing on a railway track in Amritsar on Friday evening. As Ravan's effigy - located very close to the tracks at Jaura Phatak - was lit and fireworks went off, a section of the crowd retreated towards the tracks, where a large number of people were already standing to watch the celebrations. The people who were hit could not see or hear the train due to the exploding crackers. An angry crowd shouted slogans against local legislator Navjot Kaur Sidhu, who was present as chief guest during the event. Chief Minister Amarinder Singh has ordered an inquiry into the accident."
-para2="Somewhere around 60 individuals observing Dussehra were killed after a prepare kept running more than hundreds remaining on a railroad track in Amritsar on Friday evening. As Ravan's likeness - found near the tracks at Jaura Phatak - was lit and firecrackers went off, a segment of the group withdrew towards the tracks, where a substantial number of individuals were at that point remaining to watch the festivals. The general population who were hit couldn't see or hear the prepare because of the detonating saltines. An irate group yelled trademarks against neighborhood lawmaker Navjot Kaur Sidhu, who was available as boss visitor amid the occasion. Boss Clergyman Amarinder Singh has requested an investigation into the mischance."
-para3="The present government is calling it a natural disaster instead of setting an example. This is not a natural disaster; this is massacre. No FIR is being registered on victims’ statement. An inquiry should happen out of Punjab under a high court."
-para4="Moments before 61 people watching a Ravan effigy burn were crushed under a train in Amritsar on Friday evening, an organizer of the Dussehra event had bragged to the chief guest, Congress leader and former lawmaker Navjot Kaur Sidhu, that the crowd there was so enthusiastic to see her that they would stand on the nearby railway tracks and not budge even if hundreds of trains pass by"
+    def matchingSimilarity(keyWords1, keyWords2, synonymWords1, synonymWords2):
+        #keywords get 80% matching, synonyms get 20% matching
+        kwcount1=len(keyWords1)
+        kwcount2=len(keyWords2)
+        syncount1=len(synonymWords1)
+        syncount2=len(synonymWords2)
 
-gen_1=Generator(para1)
-gen_2=Generator(para2)
-gen_3=Generator(para3)
-gen_4=Generator(para4)
+        kwmatchcount=0
+        synmatchcount=0
 
-keyWords1=gen_1.keywordGenerator()
-keyWords2=gen_2.keywordGenerator()
-keyWords3=gen_3.keywordGenerator()
-keyWords4=gen_4.keywordGenerator()
+        for i in range(0, kwcount1):
+            for j in range(0, kwcount2):
+                if(keyWords1[i]==keyWords2[j]):
+                    kwmatchcount=kwmatchcount+1
+        for i in range(0, syncount1):
+            for j in range(0, syncount2):
+                if(synonymWords1[i]==synonymWords2[j]):
+                    synmatchcount=synmatchcount+1
 
-synonym1=gen_1.synonymGenerator(keyWords1)
+        similaritykw=((kwmatchcount*2)/(kwcount1+kwcount2))*80/100
+        similaritysyn=((synmatchcount*2)/(syncount1+syncount2))*20/100
+        totalsimilarity=similaritykw+similaritysyn
+        return totalsimilarity*100
+        
 
-"""
-print(keyWords1)
-print(keyWords2)
-print(keyWords3)
-print(keyWords4)
-"""
-print(synonym1)
+#channel=[]
+def runApp(channel):
+    finalresult=[]
+    gen_ref=Generator(para1)
+    keyWords_ref=gen_ref.keywordGenerator()    
+    synonym_ref=gen_ref.synonymGenerator(keyWords_ref)
+
+    i=0
+    while i<len(channel):
+        gen_1=Generator(channel1[i])
+        keyWords1=gen_1.keywordGenerator()    
+        synonym1=gen_1.synonymGenerator(keyWords1)
+        finalresult.append(Generator.matchingSimilarity(keyWords_ref, keyWords1, synonym_ref, synonym1))
+        i=i+1
+    return finalresult
+    #print(finalresult)
+
+
+    
