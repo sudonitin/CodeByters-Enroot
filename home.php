@@ -7,9 +7,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500">
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <script type="text/javascript" src="js/search.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -25,10 +26,6 @@
 						'height':'40px',
 						'opacity':'1'
 				});
-				$('.ic').css({
-						'margin-top': '10%',
-						'z-index': '+1'
-				});
 		});
 		$('.line-1, .line-2').click(function() {
 				$('.search').removeClass('active').val('');
@@ -40,15 +37,15 @@
 						'height':'0px',
 						'opacity':'0'
 				});
-				$('.ic').css({
-						'margin-top': '8%',
-						'z-index': '+1'
-				});
 
 		});
 });
 </script>
-<div id="particles-js" style="z-index: -1;" ></div>
+
+</head>
+<body>
+
+		<div id="particles-js" style="z-index: -1;" ></div>
 		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 		<style type="text/css">
@@ -95,56 +92,15 @@
 
 		
 	<!--particle ends here-->
-</head>
 
-<body>
-
-	<div class="container-fluid" style="z-index: +1; background-color: transparent;" id="fluid_1">
+	<div class="container-fluid" style="z-index: +1; margin-top: 5%;" id="fluid_1">
 		<h1>Fake News Catcher.com</h1><br>
 			<main style="position: absolute; text-align: center;" id="search-box">
-				<input type="text" class="search" style= "z-index: +1"/> 
+				<input type="text" class="search" id="search" style= "z-index: +1"/>
 				<div class="line-1"></div>
-				<div class="line-2"></div>
-				
-			</main><br>
-
-			<div class="container">  <!-- Button to Open the Modal -->
-				  <button type="button" style="margin-top: 10%; background-color: transparent;" class="btn" data-toggle="modal" data-target="#myModal"><i class="fas fa-camera fa-3x"></i>
-				  </button>
-
-				  <!-- The Modal -->
-				  <div class="modal" id="myModal">
-				    <div class="modal-dialog">
-				      <div class="modal-content">
-				      
-				        <!-- Modal Header -->
-				        <div class="modal-header">
-				          <h4 class="modal-title">Upload Image</h4>
-				          <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        </div>
-				        
-				        <!-- Modal body -->
-				        <div class="modal-body">
-				          <form>
-				          	<input type="file" name=""> 
-				          </form>
-				        </div>
-				        
-				        <!-- Modal footer -->
-				        <div class="modal-footer">
-				          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				          <button type="button" class="btn btn-warning" data-dismiss="modal">upload</button>
-				        </div>
-				        
-				      </div>
-				    </div>
-				  </div>
-  
-				</div>
-
-			<a href="#" id="stylish-btn">Check</a><br>
-			
-			
+				<div class="line-2"></div><br>
+			</main><br><br><br><br><br>
+			<a href="#" id="stylish-btn">Check</a>
 
 		<style type="text/css">
 			/*search-animation*/
@@ -224,7 +180,7 @@
 		#search-box{
 		position: absolute;
 		left: 50%;
-		top: 30%;
+		top: 37%;
 		transform: translate(-50%, -50%);
 		}
 
@@ -259,5 +215,17 @@
 	}
 		</style>
 	</div>
+	<script>
+		$('#stylish-btn').click(function(){
+			var input = $('#search').val();
+		$.post('link.php',{input:input},function(data,status){
+			$('#output').html(data);
+		});
+	});
+	</script>
+	<div id='output' class="container" style="margin-top: 13%; font-family: 'Roboto'; font-size: 120%; ">
+		
+	</div>
+
 </body>
 </html>

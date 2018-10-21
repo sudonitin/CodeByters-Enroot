@@ -71,18 +71,16 @@ body{
 }
 /*button animation finished above*/
 
-i{
-	color: black;
-}
 
-i:hover{
-	color: #929993;
+footer{
+	padding-top: 3%;
 }
 
 @media only screen and (min-width: 1024px){
 
 	#fluid_1{
 		text-align: center;
+		padding-bottom: 1%;
 	}
 
 
@@ -96,7 +94,6 @@ i:hover{
 		/*button animation*/
 	#stylish-btn{
 		position: absolute;
-		margin-top: 3%;
 		top: 53%;
 		left: 50%;
 		transform: translate(-50%,-50%);
@@ -146,5 +143,4 @@ i:hover{
 		transform-origin: bottom right;
 		transform: scale(0);
 	}
-
 }
